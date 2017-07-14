@@ -41,8 +41,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="XPatchLib, Version=3.0.0.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\XPatchLib.3.0.0.1\lib\net20\XPatchLib.dll</HintPath>
+    <Reference Include="XPatchLib, Version=3.0.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\XPatchLib.3.0.1.4\lib\net20\XPatchLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +50,7 @@
     <Compile Include="CSharp\Examples\Combine.cs" />
     <Compile Include="CSharp\Examples\ComplexObjCombineAndDivide.cs" />
     <Compile Include="CSharp\Examples\Divide.cs" />
+    <Compile Include="CSharp\Examples\IgnoreAttributeType.cs" />
     <Compile Include="CSharp\Examples\PrimaryKeyException.cs" />
     <Compile Include="CSharp\Examples\RegisterTypes.cs" />
     <Compile Include="CSharp\Examples\SimpleExample.cs" />
@@ -59,6 +60,7 @@
   <ItemGroup>
     <Content Include="xmls\CombineExamplePatch.xml" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

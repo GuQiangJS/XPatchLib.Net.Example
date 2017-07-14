@@ -21,9 +21,9 @@ namespace XPatchLib.Example
             settings.ConformanceLevel = System.Xml.ConformanceLevel.Document;
             Serializer serializer = new Serializer(typeof(Book));
 
-            using (System.Xml.XmlWriter xmlWriter = System.Xml.XmlWriter.Create(context, settings))
+            using (StringWriter strWriter=new StringWriter(context))
             {
-                using (XmlTextWriter writer = new XmlTextWriter(xmlWriter))
+                using (XmlTextWriter writer = new XmlTextWriter(strWriter))
                 {
                     serializer.Divide(writer, OriBook, RevBook);
                 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Xml;
 
 namespace XPatchLib.Example
@@ -23,21 +24,18 @@ namespace XPatchLib.Example
             var serializer = new Serializer(typeof(PurchaseOrder));
             using (var fs = new MemoryStream())
             {
-                using (var xmlWriter = XmlWriter.Create(fs))
+                using (var writer = new XmlTextWriter(fs, new UTF8Encoding(false)))
                 {
-                    using (var writer = new XmlTextWriter(xmlWriter))
+                    try
                     {
-                        try
-                        {
-                            //由于 OrderedItem 类型没有定义主键，所以在序列化/反序列化 集合对象时会抛出 AttributeMissException 异常。
-                            serializer.Divide(writer, order, newOrder);
-                        }
-                        catch (AttributeMissException ex)
-                        {
-                            Console.WriteLine(ex.Message);
-                            Console.WriteLine(ex.AttributeName);
-                            Console.WriteLine(ex.ErrorType);
-                        }
+                        //由于 OrderedItem 类型没有定义主键，所以在序列化/反序列化 集合对象时会抛出 AttributeMissException 异常。
+                        serializer.Divide(writer, order, newOrder);
+                    }
+                    catch (AttributeMissException ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(ex.AttributeName);
+                        Console.WriteLine(ex.ErrorType);
                     }
                 }
             }

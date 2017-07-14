@@ -33,18 +33,10 @@ namespace XPatchLib.Example
 
             //产生增量内容
             var serializer = new Serializer(typeof(PurchaseOrder));
-            using (var fs = new FileStream(filename, FileMode.Create, FileAccess.ReadWrite))
+
+            using (var writer = new XmlTextWriter(filename, new UTF8Encoding(false)))
             {
-                var settings = new XmlWriterSettings();
-                settings.Encoding = Encoding.UTF8;
-                settings.Indent = true;
-                using (var xmlWriter = XmlWriter.Create(fs, settings))
-                {
-                    using (var writer = new XmlTextWriter(xmlWriter))
-                    {
-                        serializer.Divide(writer, order, newOrder);
-                    }
-                }
+                serializer.Divide(writer, order, newOrder);
             }
         }
 

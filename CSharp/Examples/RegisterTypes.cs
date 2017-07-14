@@ -28,10 +28,7 @@ namespace XPatchLib.Example
 
             using (var ms = new MemoryStream())
             {
-                var settings = new XmlWriterSettings();
-                settings.Encoding = Encoding.UTF8;
-                settings.Indent = true;
-                using (var writer = new XmlTextWriter(XmlWriter.Create(ms, settings)))
+                using (var writer = new XmlTextWriter(ms,new UTF8Encoding(false)))
                 {
                     serializer.Divide(writer, oldItems, newItems);
                 }
