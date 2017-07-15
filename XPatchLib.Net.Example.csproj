@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSharp\Examples\ActionName.cs" />
     <Compile Include="CSharp\Examples\AttributeMissException.cs" />
     <Compile Include="CSharp\Examples\Combine.cs" />
     <Compile Include="CSharp\Examples\ComplexObjCombineAndDivide.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="CSharp\Examples\IgnoreAttributeType.cs" />
     <Compile Include="CSharp\Examples\PrimaryKeyException.cs" />
     <Compile Include="CSharp\Examples\RegisterTypes.cs" />
+    <Compile Include="CSharp\Examples\SerializeDefalutValue.cs" />
     <Compile Include="CSharp\Examples\SimpleExample.cs" />
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
