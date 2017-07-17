@@ -18,7 +18,7 @@ namespace XPatchLib.Example
             }
         }
 
-        [PrimaryKey("Author")]
+        [XPatchLib.PrimaryKey("Author")]
         public class ErrorPrimaryKeyDefineClass
         {
             public AuthorClass Author { get; set; }

@@ -52,6 +52,7 @@
     <Compile Include="CSharp\Examples\ComplexObjCombineAndDivide.cs" />
     <Compile Include="CSharp\Examples\Divide.cs" />
     <Compile Include="CSharp\Examples\IgnoreAttributeType.cs" />
+    <Compile Include="CSharp\Examples\PrimaryKeyAttribute.cs" />
     <Compile Include="CSharp\Examples\PrimaryKeyException.cs" />
     <Compile Include="CSharp\Examples\RegisterTypes.cs" />
     <Compile Include="CSharp\Examples\SerializeDefalutValue.cs" />
