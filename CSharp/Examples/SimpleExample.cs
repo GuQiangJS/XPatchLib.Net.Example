@@ -9,9 +9,19 @@ namespace XPatchLib.Example
     {
         public static void Main(string[] args)
         {
-            Book OriBook = new Book() { ISBN = "0-385-50420-9", Name = "The Da Vinci Code", Author = new Author() { FirstName = "Dan", LastName = "Brown" } };
+            Book OriBook = new Book()
+            {
+                ISBN = "0-385-50420-9",
+                Name = "The Da Vinci Code",
+                Author = new Author() {FirstName = "Dan", LastName = "Brown"}
+            };
 
-            Book RevBook = new Book() { ISBN = "0-385-50420-9", Name = "达芬奇密码", Author = new Author() { FirstName = "丹", LastName = "布朗" } };
+            Book RevBook = new Book()
+            {
+                ISBN = "0-385-50420-9",
+                Name = "达芬奇密码",
+                Author = new Author() {FirstName = "丹", LastName = "布朗"}
+            };
 
             StringBuilder context = new StringBuilder();
 
@@ -21,7 +31,7 @@ namespace XPatchLib.Example
             settings.ConformanceLevel = System.Xml.ConformanceLevel.Document;
             Serializer serializer = new Serializer(typeof(Book));
 
-            using (StringWriter strWriter=new StringWriter(context))
+            using (StringWriter strWriter = new StringWriter(context))
             {
                 using (XmlTextWriter writer = new XmlTextWriter(strWriter))
                 {
@@ -31,19 +41,16 @@ namespace XPatchLib.Example
 
             Book NewBook = null;
 
-            using (System.Xml.XmlReader xmlReader = System.Xml.XmlReader.Create(new StringReader(context.ToString())))
+            using (XmlTextReader reader = new XmlTextReader(new StringReader(context.ToString())))
             {
-                using (XmlTextReader reader = new XmlTextReader(xmlReader))
-                {
-                    NewBook = serializer.Combine(reader, OriBook, false) as Book;
-                }
+                NewBook = serializer.Combine(reader, OriBook, false) as Book;
             }
 
             Console.WriteLine(NewBook);
         }
     }
 
-    [PrimaryKey("ISBN")]
+    [XPatchLib.PrimaryKey("ISBN")]
     public class Book
     {
         static string OUTPUT;

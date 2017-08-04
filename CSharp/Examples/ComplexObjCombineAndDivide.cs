@@ -68,12 +68,9 @@ namespace XPatchLib.Example
 
             using (var fs = new FileStream(filename, FileMode.Open))
             {
-                using (var xmlReader = XmlReader.Create(fs))
+                using (var reader = new XmlTextReader(fs))
                 {
-                    using (var reader = new XmlTextReader(xmlReader))
-                    {
-                        newOrder = (PurchaseOrder) serializer.Combine(reader, oldOrder);
-                    }
+                    newOrder = (PurchaseOrder) serializer.Combine(reader, oldOrder);
                 }
             }
 
@@ -129,7 +126,7 @@ namespace XPatchLib.Example
             public string Zip;
         }
 
-        [PrimaryKey("ItemName")]
+        [XPatchLib.PrimaryKey("ItemName")]
         public class OrderedItem
         {
             public string Description { get; set; }

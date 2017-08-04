@@ -20,22 +20,19 @@ namespace XPatchLib.Example
             var serializer = new Serializer(typeof(OrderedItem));
             using (var fs = new FileStream(filename, FileMode.OpenOrCreate))
             {
-                using (var xmlReader = XmlReader.Create(fs))
+                oldOrderItem = new OrderedItem
                 {
-                    oldOrderItem = new OrderedItem
-                    {
-                        Description = "Big Widget",
-                        ItemName = "Widgt",
-                        Quantity = 0,
-                        UnitPrice = (decimal) 4.7
-                    };
+                    Description = "Big Widget",
+                    ItemName = "Widgt",
+                    Quantity = 0,
+                    UnitPrice = (decimal) 4.7
+                };
 
-                    // 采用不改动现有 oldOrderItem 合并方式，将增量内容与 oldOrderItem 内容进行合并，产生新的对象实例 newOrderItem
-                    // newOrderItem 与 oldOrderItem 非同一对象。
-                    using (var reader = new XmlTextReader(xmlReader))
-                    {
-                        newOrderItem = (OrderedItem) serializer.Combine(reader, oldOrderItem);
-                    }
+                // 采用不改动现有 oldOrderItem 合并方式，将增量内容与 oldOrderItem 内容进行合并，产生新的对象实例 newOrderItem
+                // newOrderItem 与 oldOrderItem 非同一对象。
+                using (var reader = new XmlTextReader(fs))
+                {
+                    newOrderItem = (OrderedItem) serializer.Combine(reader, oldOrderItem);
                 }
             }
 

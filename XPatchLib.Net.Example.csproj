@@ -41,8 +41,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="XPatchLib, Version=3.0.1.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\XPatchLib.3.0.1.4\lib\net20\XPatchLib.dll</HintPath>
+    <Reference Include="XPatchLib, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\XPatchLib.3.0.2.4\lib\net20\XPatchLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -63,7 +63,6 @@
   <ItemGroup>
     <Content Include="xmls\CombineExamplePatch.xml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
