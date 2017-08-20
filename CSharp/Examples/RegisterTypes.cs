@@ -22,9 +22,7 @@ namespace XPatchLib.Example
 
             var serializer = new Serializer(typeof(List<OrderedItem>));
             //当OrderItem类型上未标记PrimaryKeyAttribute时，可以通过RegisterTypes方法向系统注册类型与主键的关系
-            var types = new Dictionary<Type, string[]>();
-            types.Add(typeof(OrderedItem), new[] {"ItemName"});
-            serializer.RegisterTypes(types);
+            serializer.RegisterType(typeof(OrderedItem), new[] { "ItemName" });
 
             using (var ms = new MemoryStream())
             {
