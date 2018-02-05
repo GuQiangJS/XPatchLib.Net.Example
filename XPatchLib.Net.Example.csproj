@@ -43,8 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="XPatchLib, Version=4.0.2.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\XPatchLib.4.0.2.1\lib\net40\XPatchLib.dll</HintPath>
+    <Reference Include="XPatchLib">
+      <HintPath>bin\XPatchLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +55,9 @@
     <Compile Include="CSharp\Examples\ComplexObjCombineAndDivide.cs" />
     <Compile Include="CSharp\Examples\Divide.cs" />
     <Compile Include="CSharp\Examples\IgnoreAttributeType.cs" />
+    <Compile Include="CSharp\Examples\Mode.cs" />
+    <Compile Include="CSharp\Examples\Modifier.cs" />
+    <Compile Include="CSharp\Examples\MemberType.cs" />
     <Compile Include="CSharp\Examples\PrimaryKeyAttribute.cs" />
     <Compile Include="CSharp\Examples\PrimaryKeyException.cs" />
     <Compile Include="CSharp\Examples\RegisterTypes.cs" />
@@ -68,7 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
