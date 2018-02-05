@@ -43,8 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="XPatchLib, Version=3.0.5.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\XPatchLib.3.0.5.1\lib\net40\XPatchLib.dll</HintPath>
+    <Reference Include="XPatchLib, Version=4.0.2.1, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\XPatchLib.4.0.2.1\lib\net40\XPatchLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
